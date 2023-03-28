@@ -1,6 +1,6 @@
 # PRJCTR HW8: Nginx fine tune
 
-This repository contains `nginx` configuration with enabled caching.
+This repository contains [nginx](https://nginx.org/) configuration with enabled caching.
 In this example nginx will cache images that were requested at least twice.
 Also cache invalidation endpoint was added.
 
