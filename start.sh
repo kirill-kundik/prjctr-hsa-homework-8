@@ -3,6 +3,15 @@
 echo ""
 echo "Starting nginx container to test cache options"
 
+if docker ps | grep -q -e "nginx-cache-test"
+then
+  echo "Found previously created container. Removing it..."
+
+  docker rm -f "nginx-cache-test" &> /dev/null
+
+  echo "Previous container was successfully removed. Starting a new one..."
+fi
+
 docker run --name "nginx-cache-test" \
   --mount type=bind,source="$(pwd)"/images,target=/var/www/html/images,readonly \
   --mount type=bind,source="$(pwd)"/nginx.conf,target=/etc/nginx/nginx.conf,readonly \
