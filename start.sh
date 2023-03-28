@@ -3,7 +3,7 @@
 echo ""
 echo "Starting nginx container to test cache options"
 
-if docker ps | grep -q -e "nginx-cache-test"
+if docker ps --all | grep -q -e "nginx-cache-test"
 then
   echo "Found previously created container. Removing it..."
 
